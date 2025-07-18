@@ -1,74 +1,161 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# 💼 FreeTask
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**FreeTask** — веб-приложение на **React** для фрилансеров и клиентов.  
+Позволяет искать исполнителей, управлять заказами и командами, вести портфолио, оставлять отзывы и смотреть аналитику.  
+Приятный адаптивный интерфейс с анимациями (Framer Motion) и стилями на Tailwind CSS.
 
-## Available Scripts
+## ✨ Возможности
 
-In the project directory, you can run:
+- 🔐 **Аутентификация**: регистрация, вход, сброс пароля, верификация email, Google OAuth.
+- 👤 **Профиль**: редактирование биографии, навыков, аватара; рейтинг, уровни (Новичок → Эксперт).
+- 📁 **Портфолио**: добавление/удаление работ с описаниями, изображениями и видео.
+- 📝 **Отзывы**: добавление отзывов, просмотр рейтингов (звёздочки, конечно же).
+- 👥 **Команды**: создание команд, просмотр и управление составом и навыками.
+- 📊 **Аналитика**: статистика заказов, доходов, последние проекты.
+- 🎨 **Интерфейс**: современный дизайн, анимации (Framer Motion), стилизация через Tailwind CSS.
 
-### `npm start`
+## 📋 Требования
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Node.js 16+
+- Любой современный браузер (Chrome, Firefox, Safari)
+- Доступ к **FreeTask API** (бэкенд)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🧩 Зависимости
 
-### `npm test`
+| Библиотека / Технология | Назначение |
+|-------------------------|------------|
+| `React`                 | UI-рендеринг |
+| `React Router`          | Навигация |
+| `Tailwind CSS`          | Стили |
+| `Framer Motion`         | Анимации |
+| `Axios`                 | HTTP-запросы |
+| `jwt-decode`            | Декодирование JWT |
+| `lodash`                | Утилиты (debounce и т.д.) |
+| `prop-types`            | Проверка типов props |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Полный список — смотри в [`package.json`](./package.json).
 
-### `npm run build`
+## 🚀 Установка и запуск
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. Клонируй репозиторий
+```bash
+git clone https://github.com/YourUsername/FreeTask.git
+cd FreeTask
+````
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 2. Установи зависимости
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm install
+```
 
-### `npm run eject`
+### 3. Создай файл конфигурации
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Создай `src/api/api.js`:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```js
+export const API_BASE_URL = 'https://your-api-host.com';
+export const FILE_BASE_URL = 'https://your-file-host.com';
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+> ⚠️ Укажи актуальные URL для API и файлового хранилища.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 4. Запусти приложение
 
-## Learn More
+```bash
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Открой браузер: [http://localhost:3000](http://localhost:3000)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🖱️ Использование
 
-### Code Splitting
+### 🔐 Аутентификация
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+| Маршрут           | Назначение                                |
+| ----------------- | ----------------------------------------- |
+| `/login`          | Вход                                      |
+| `/register`       | Регистрация (роль, email, пароль, Google) |
+| `/reset-password` | Сброс пароля                              |
 
-### Analyzing the Bundle Size
+### 👤 Профиль
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+| Маршрут    | Назначение                                            |
+| ---------- | ----------------------------------------------------- |
+| `/profile` | Просмотр и редактирование профиля                     |
+|            | Управление портфолио, аналитикой, отзывами, командами |
 
-### Making a Progressive Web App
+### 👥 Команды
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+| Маршрут     | Назначение               |
+| ----------- | ------------------------ |
+| `/teams`    | Список и создание команд |
+| `/team/:id` | Страница команды         |
 
-### Advanced Configuration
+### 📁 Портфолио / 📝 Отзывы
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+* Добавление / удаление работ (изображения, видео)
+* Просмотр и публикация отзывов с рейтингом
 
-### Deployment
+## 📦 Сборка
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Релиз:
 
-### `npm run build` fails to minify
+```bash
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# FreeTask
->>>>>>> 83f27a5dccd74ed3bac63d1e3c265c646e77f37b
+Файлы будут в папке `build/`.
+
+### Развёртывание:
+
+* Скопируй `build/` на сервер (например, через FTP, SCP, rsync)
+* Убедись, что API и файловый сервер доступны по указанным URL
+* Настрой CORS и HTTPS при необходимости
+
+## 📸 Скриншоты
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+  <img src="https://github.com/TemhaN/FreeTask/blob/main/Screenshots/1.png?raw=true" alt="FreeTask" width="30%">
+  <img src="https://github.com/TemhaN/FreeTask/blob/main/Screenshots/2.png?raw=true" alt="FreeTask" width="30%">
+  <img src="https://github.com/TemhaN/FreeTask/blob/main/Screenshots/3.png?raw=true" alt="FreeTask" width="30%">
+  <img src="https://github.com/TemhaN/FreeTask/blob/main/Screenshots/4.png?raw=true" alt="FreeTask" width="30%">
+  <img src="https://github.com/TemhaN/FreeTask/blob/main/Screenshots/5.png?raw=true" alt="FreeTask" width="30%">
+  <img src="https://github.com/TemhaN/FreeTask/blob/main/Screenshots/6.png?raw=true" alt="FreeTask" width="30%">
+  <img src="https://github.com/TemhaN/FreeTask/blob/main/Screenshots/7.png?raw=true" alt="FreeTask" width="30%">
+  <img src="https://github.com/TemhaN/FreeTask/blob/main/Screenshots/8.png?raw=true" alt="FreeTask" width="30%">
+  <img src="https://github.com/TemhaN/FreeTask/blob/main/Screenshots/9.png?raw=true" alt="FreeTask" width="30%">
+  <img src="https://github.com/TemhaN/FreeTask/blob/main/Screenshots/10.png?raw=true" alt="FreeTask" width="30%">
+  <img src="https://github.com/TemhaN/FreeTask/blob/main/Screenshots/11.png?raw=true" alt="FreeTask" width="30%">
+  <img src="https://github.com/TemhaN/FreeTask/blob/main/Screenshots/12.png?raw=true" alt="FreeTask" width="30%">
+  <img src="https://github.com/TemhaN/FreeTask/blob/main/Screenshots/13.png?raw=true" alt="FreeTask" width="30%">
+  <img src="https://github.com/TemhaN/FreeTask/blob/main/Screenshots/14.png?raw=true" alt="FreeTask" width="30%">
+  <img src="https://github.com/TemhaN/FreeTask/blob/main/Screenshots/15.png?raw=true" alt="FreeTask" width="30%">
+  <img src="https://github.com/TemhaN/FreeTask/blob/main/Screenshots/16.png?raw=true" alt="FreeTask" width="30%">
+  <img src="https://github.com/TemhaN/FreeTask/blob/main/Screenshots/17.png?raw=true" alt="FreeTask" width="30%">
+  <img src="https://github.com/TemhaN/FreeTask/blob/main/Screenshots/18.png?raw=true" alt="FreeTask" width="30%">
+</div>    
+
+## 🧠 Автор
+
+**TemhaN**  
+[GitHub профиль](https://github.com/TemhaN)
+
+## 🧾 Лицензия
+
+Проект распространяется под лицензией [MIT License].
+
+## 📬 Обратная связь
+
+Нашли баг или хотите предложить улучшение?
+Создайте **issue** или присылайте **pull request** в репозиторий!
+
+## ⚙️ Технологии
+
+* **React** — создание интерфейса
+* **React Router** — маршрутизация
+* **Tailwind CSS** — стили
+* **Framer Motion** — анимации
+* **Axios** — API-запросы
+* **JWT** — авторизация через токены
+* **Lodash** — полезные утилиты
