@@ -39,7 +39,7 @@
 
 ### 1. Клонируй репозиторий
 ```bash
-git clone https://github.com/YourUsername/FreeTask.git
+git clone https://github.com/TemhaN/FreeTask.git
 cd FreeTask
 ````
 
